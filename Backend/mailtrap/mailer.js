@@ -47,6 +47,7 @@ export const sendPasswordResetEmail = async (to, resetURL) => {
     });
   });
 };
+
 export const sendEmail = async (to, verificationToken) => {
   const ACCESS_TOKEN = await oAuth2Client.getAccessToken();
   const transport = nodemailer.createTransport({
@@ -75,3 +76,67 @@ export const sendEmail = async (to, verificationToken) => {
     });
   });
 };
+
+export const sendWelcomeEmail = async (to) => {
+  const ACCESS_TOKEN = await oAuth2Client.getAccessToken();
+  const transport = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      type: "OAuth2",
+      user: process.env.MY_EMAIL,
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+      refreshToken: process.env.REFRESH_TOKEN,
+      accessToken: ACCESS_TOKEN.token,
+    },
+    tls: {
+      rejectUnauthorized: true,
+    },
+  });
+
+  const from = process.env.MY_EMAIL;
+  const subject = "Welcome To Learnify";
+  const html = WELCOME_EMAIL_TEMPLATE;
+
+  return new Promise((resolve, reject) => {
+    transport.sendMail({ from, to, subject, html }, (err, info) => {
+      if (err) reject(Error sending Welcome email: ${err});
+      else resolve(info);
+    });
+  });
+};
+
+export const sendResetSuccessEmail = async (to) => {
+  const ACCESS_TOKEN = await oAuth2Client.getAccessToken();
+  const transport = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      type: "OAuth2",
+      user: process.env.MY_EMAIL,
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+      refreshToken: process.env.REFRESH_TOKEN,
+      accessToken: ACCESS_TOKEN.token,
+    },
+    tls: {
+      rejectUnauthorized: true,
+    },
+  });
+
+  const from = process.env.MY_EMAIL;
+  const subject = "Password Reset Successful";
+  const html = PASSWORD_RESET_SUCCESS_TEMPLATE;
+
+  return new Promise((resolve, reject) => {
+    transport.sendMail({ from, to, subject, html }, (err, info) => {
+      if (err) {
+        console.error("Error sending password reset success email", err);
+        reject(Error sending password reset success email: ${err});
+      } else {
+        console.log("Password reset success email sent successfully", info);
+        resolve(info);
+      }
+    });
+  });
+};
+
