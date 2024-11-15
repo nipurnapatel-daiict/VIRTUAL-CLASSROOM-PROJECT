@@ -1,24 +1,25 @@
 import passport from 'passport';
+import dotenv from 'dotenv';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
-
+dotenv.config();
 passport.use(
     new GoogleStrategy(
         {
-            clientID: "443758568479-p54v7afhsgbf0oegtsn707bd1072v4n0.apps.googleusercontent.com",
-            clientSecret: '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',
+            clientID: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             callbackURL: "/auth/google/callback",
-            scope: ["profile","email"],
+            scope: ["profile", "email"],
         },
-        function(accessToken,refreshToken,profile,callback){
-            callback(null,profile);
+        function(accessToken, refreshToken, profile, callback) {
+            callback(null, profile);
         }
     )
 );
 
-passport.serializeUser((user,done) => {
-    done(null,user);
+passport.serializeUser((user, done) => {
+    done(null, user);
 });
 
-passport.deserializeUser((user,done) => {
-    done(null,user);
+passport.deserializeUser((user, done) => {
+    done(null, user);
 });
