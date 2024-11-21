@@ -4,40 +4,42 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #d5d5de;; /* Consistent dark background */
+  background: linear-gradient(135deg, #0F172A, #1E293B); /* Dark gradient background */
   margin: 0;
+  font-family: "Arial", sans-serif; /* Consistent font style */
+  color: #ffffff; /* White text for better contrast */
 }
 
 /* Box containing the reset password form */
 .reset-password-box {
-  background: white;
+  background: #1E293B; /* Dark box background matching the theme */
   padding: 2.5rem;
-  border-radius: 15px; /* Rounded edges for a modern look */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.235); /* Soft shadow effect */
+  border-radius: 12px; /* Rounded edges */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow */
   text-align: center;
   width: 100%;
-  max-width: 400px; /* Limit max width for larger screens */
-  margin: 1rem; /* Margin for better responsiveness */
-  transition: transform 0.3s ease; /* Hover lift effect */
+  max-width: 400px; /* Prevent the box from being too wide */
+  margin: 1rem;
+  transition: transform 0.3s ease; /* Smooth hover lift effect */
 }
 
 /* Hover effect for the box */
 .reset-password-box:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px); /* Gentle hover effect */
 }
 
 /* Heading style */
 .reset-password-box h1 {
-  font-size: 28px;
-  color: #000000; /* Blue color to stand out */
-  font-weight: 600;
+  font-size: 24px; /* Consistent with image heading size */
+  color: #ffffff; /* Bright white text */
+  font-weight: bold; /* Emphasis on the title */
   margin-bottom: 1.5rem;
 }
 
 /* Paragraph style */
 .reset-password-box p {
-  font-size: 15px;
-  color: #777;
+  font-size: 14px; /* Similar to the provided image */
+  color: #94A3B8; /* Muted text for description */
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -46,41 +48,44 @@
 .reset-password-box form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; /* Space between inputs */
+  gap: 1rem; /* Adjusted spacing between inputs */
 }
 
 /* Input field style */
 .reset-password-box input[type="password"] {
   padding: 1rem;
-  font-size: 16px; /* Larger font for readability */
-  border: 1px solid #ccc;
-  border-radius: 8px; /* Rounded corners for input fields */
+  font-size: 16px; /* Consistent font size for readability */
+  border: 1px solid #475569; /* Subtle border color */
+  background-color: #0F172A; /* Dark background for input */
+  color: #ffffff; /* White text for inputs */
+  border-radius: 8px;
   width: 100%;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus transition */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus effect */
 }
 
 .reset-password-box input[type="password"]:focus {
   outline: none;
-  border-color: #2575fc;
-  box-shadow: 0 0 8px rgba(37, 117, 252, 0.5); /* Soft blue glow on focus */
+  border-color: #2563EB; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5); /* Glow effect */
 }
 
 /* Button style */
 .reset-password-box button {
-  background-color: #2575fc;
-  color: white;
+  background-color: #2563EB; /* Bright blue button */
+  color: #ffffff;
   padding: 1rem;
-  font-size: 18px; /* Larger font size for button */
+  font-size: 18px;
   border: none;
-  border-radius: 8px; /* Rounded edges for button */
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  
 }
 
 /* Button hover effect */
 .reset-password-box button:hover {
-  background-color: #000000;
-  transform: translateY(-2px); /* Lift effect on hover */
+  background-color: #3B82F6; /* Slightly lighter blue on hover */
+  transform: translateY(-2px); /* Lift effect */
 }
 
 /* Button active/click effect */
@@ -91,13 +96,13 @@
 /* Message display style */
 .message {
   margin-top: 1.5rem;
-  font-size: 16px; /* Slightly larger for readability */
-  color: #007bff; /* Blue color for success/failure messages */
-  font-weight: 600;
+  font-size: 14px; /* Smaller font for message text */
+  color: #6EE7B7; /* Light green for messages */
+  font-weight: 500;
   transition: color 0.3s ease; /* Smooth color change */
 }
 
 .message:hover {
-  color: #020e1b; /* Darker blue on hover */
+  color: #34D399; /* Slightly darker green on hover */
   text-decoration: underline;
 }
