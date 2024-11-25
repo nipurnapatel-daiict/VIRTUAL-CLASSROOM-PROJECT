@@ -3,99 +3,108 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
+  background: linear-gradient(135deg, #0F172A, #1E293B); /* Updated gradient matching image style */
   font-family: "Arial", sans-serif;
-  color: #000000;
+  color: #ffffff;
+  margin: 0; /* Full viewport height usage */
+}
+
+.background {
+  background-color: #1E293B;
+  background-size: cover;
 }
 
 .otp-card {
-  background: #fff;
-  color: #0d0d0d;
+  background: #1E293B; /* Dark card background */
+  color: #ffffff; /* White text */
   padding: 2.5rem;
-  border-radius: 15px; /* Slightly more rounded corners */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.235); /* Softer, larger shadow */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
   text-align: center;
   width: 100%;
-  max-width: 400px; /* Ensures card doesn't become too wide */
-  margin: 1rem; /* Padding around the card for responsiveness */
-  transition: transform 0.3s ease-in-out; /* Card hover effect */
+  max-width: 400px; /* Prevent card from being too wide */
+  margin: 1rem; /* Space for responsive design */
+  transition: transform 0.3s ease-in-out; /* Hover effect */
 }
 
 .otp-card:hover {
-  transform: translateY(-10px); /* Card hover lift effect */
+  transform: translateY(-5px); /* Gentle hover effect */
 }
 
 .otp-card h1 {
-  font-size: 28px;
-  margin-bottom: 1.5rem;
-  color: #000000;
-  font-weight: 600;
+  font-size: 24px; /* Similar heading size to the provided image */
+  margin-bottom: 1rem; /* Adjusted spacing */
+  color: #ffffff; /* Bright white title */
+  font-weight: bold; /* Strong emphasis */
 }
 
 .otp-card p {
-  font-size: 15px;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  color: #777;
+  font-size: 14px; /* Similar to provided image */
+  margin-bottom: 1.5rem; /* Adjusted spacing */
+  line-height: 1.5;
+  color: #94A3B8; /* Muted text color */
 }
 
 .otp-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem; /* Spacing between inputs */
 }
 
 .otp-input {
   padding: 1rem;
-  font-size: 20px;
+  font-size: 16px; /* Adjusted size for readability */
   text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid #475569;
+  border-radius: 8px; /* Rounded edges for inputs */
+  background-color: #334155; /* Slightly darker input background */
+  color: #ffffff; /* White text */
   width: 100%;
-  letter-spacing: 6px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 .otp-input:focus {
   outline: none;
-  border-color: #2575fc;
-  box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+  border-color: #3B82F6; /* Blue focus border */
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.8); /* Subtle glow */
+  
 }
 
 .otp-button {
-  background-color: #2575fc;
-  color: #fff;
+  background-color: #3B82F6; /* Bright blue button */
+  color: #ffffff; /* White text */
   padding: 1rem;
-  font-size: 18px;
+  font-size: 16px; /* Button size adjustment */
   border: none;
-  border-radius: 8px;
+  border-radius: 8px; /* Rounded button */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  
 }
 
 .otp-button:hover {
-  background-color: #6a11cb;
-  transform: translateY(-2px);
+  background-color: #2563EB; /* Darker blue on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .otp-button:active {
-  transform: translateY(2px);
+  transform: translateY(1px); /* Click effect */
 }
 
 .resend-text {
-  font-size: 14px;
-  margin-top: 1.25rem;
-  color: #ddd;
+  font-size: 14px; /* Adjusted size */
+  margin-top: 1rem;
+  color: #94A3B8; /* Softer text color */
 }
 
 .resend-text a {
-  color: #2575fc;
+  color: #3B82F6;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .resend-text a:hover {
-  color: #6a11cb;
+  color: #2563EB; /* Subtle hover effect */
   text-decoration: underline;
 }
