@@ -100,7 +100,8 @@ export const sendWelcomeEmail = async (to) => {
 
   return new Promise((resolve, reject) => {
     transport.sendMail({ from, to, subject, html }, (err, info) => {
-      if (err) reject(Error sending Welcome email: ${err});
+      if (err) 
+        reject(`Error sending Welcome email: ${err}`);
       else resolve(info);
     });
   });
@@ -131,7 +132,7 @@ export const sendResetSuccessEmail = async (to) => {
     transport.sendMail({ from, to, subject, html }, (err, info) => {
       if (err) {
         console.error("Error sending password reset success email", err);
-        reject(Error sending password reset success email: ${err});
+        reject(`Error sending password reset success email: ${err}`);
       } else {
         console.log("Password reset success email sent successfully", info);
         resolve(info);
