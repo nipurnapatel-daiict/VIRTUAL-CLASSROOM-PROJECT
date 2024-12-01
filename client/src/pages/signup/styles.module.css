@@ -16,8 +16,8 @@
     text-shadow: 0 4px 8px rgba(59, 130, 246, 0.6); /* Glow effect for the heading */
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left center;
+    justify-content: left center;
 }
 
 .heading::after {
@@ -35,8 +35,8 @@
     background: radial-gradient(circle, #1E293B 0%, #0F172A 100%);
     display: flex;
     margin-top: 45px;
-    width: 800px;
-    height: 450px;
+    width: 900px;
+    height: 500px; /* Increased height for new section */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
     border-radius: 30px;
     z-index: 2;
@@ -58,13 +58,13 @@
 .img {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    object-fit: cover; /* Ensure the image scales properly */
+    object-fit: full cover; /* Ensure the image scales properly */
     object-position: center; /* Center the image inside the container */
 }
 
 /* Right section */
 .right {
-    flex: 2;
+    flex: 1.5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,9 +88,9 @@
 /* Input fields */
 .input {
     width: 340px;
-    height: 45px;
+    height: 40px;
     padding: 10px;
-    margin: 12px 0;
+    margin: 9px 0;
     outline: none;
     border: none;
     border-radius: 8px;
@@ -104,7 +104,6 @@
 .input:focus {
     background-color: #64748B;
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.6); /* Highlight on focus */
-    
 }
 
 /* Dropdown menu */
@@ -126,6 +125,39 @@
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.6); /* Highlight effect */
 }
 
+/* Password validation rules */
+.password_rules {
+    margin: 15px 0;
+    width: 340px; /* Matches the input width */
+    font-size: 13px;
+    color: #94A3B8; /* Subtle text */
+    background-color: #1E293B; /* Matches the right section */
+    padding: 1px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.password_rules p {
+    margin-bottom: 8px;
+    color: #E0F2FE; /* Slightly brighter for heading text */
+    font-weight: 600;
+}
+
+.password_rules label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.password_rules input[type="checkbox"] {
+    accent-color: #3B82F6; /* Matches primary button color */
+    width: 16px;
+    height: 16px;
+}
+
 /* Buttons */
 .btn {
     font-size: 18px;
@@ -135,11 +167,10 @@
     background-color: #3B82F6;
     border: none;
     border-radius: 12px;
-    margin: 15px 0;
+    margin: 10px 0;
     cursor: pointer;
     transition: all 0.3s ease;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    
 }
 
 .btn:hover {
@@ -165,56 +196,3 @@
 .text > a:hover {
     color: #60A5FA; /* Slightly brighter on hover */
 }
-
-/* Google login button */
-.google_btn {
-    width: 230px;
-    height: 45px;
-    border-radius: 8px;
-    border: 2px solid #334155;
-    outline: none;
-    background-color: white; /* Default white background */
-    font-size: 16px;
-    font-weight: 500;
-    color: #334155; /* Matches the form's background */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.google_btn:hover {
-    background-color: #334155;
-    color: white; /* Text changes to white */
-    border: 2px solid white; /* White border for better visibility */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
-}
-
-.google_btn img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px; /* Add space between icon and text */
-}
-
-.google_btn span {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-/* Forgot password link */
-.forgot_password {
-    font-size: 15px;
-    color: #94A3B8; /* Subtle text */
-    margin-top: 15px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.forgot_password:hover {
-    color: #38BDF8;
-    text-decoration: underline;
-}
-
